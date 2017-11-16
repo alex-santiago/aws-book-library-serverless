@@ -35,4 +35,12 @@ An AWS api that inserts books into a dynamoDb table. The api is deployed using t
 
 - serverless.yml: config file to deploy api library to AWS.
 
+## API in AWS
 
+### Books methods
+
+[books-id.png](books-id.png)
+
+### Books\\{id} methods
+
+[books-root.png](books-root.png)
