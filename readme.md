@@ -10,7 +10,7 @@ A AWS api that inserts books into a dynamoDb table. The api is deployed using se
 	{
 	  "bookauthor" : "Author Name",
 	  "bookgenre" : " Book genre",
-    "booktitle" : "Book title" 
+	  "booktitle" : "Book title" 
 	} 
 	```
 
