@@ -6,13 +6,13 @@ A AWS api that inserts books into a dynamoDb table. The api is deployed using se
 
 1. Submit book - receives a .json:
 	
-	```
+	```.json
 	{
 	  "bookauthor" : "Author Name",
 	  "bookgenre" : " Book genre",
     "booktitle" : "Book title" 
 	} 
-	```.json
+	```
 
 2. List all books - returns a .json with book information
 
