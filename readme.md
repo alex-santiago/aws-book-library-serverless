@@ -1,6 +1,6 @@
 # Library api deployed to AWS using serverless
 
-A AWS api that inserts books into a dynamoDb table. The api is deployed using serverless.
+An AWS api that inserts books into a dynamoDb table. The api is deployed using the [serverless](https://serverless.com/) framework.
 
 ## Basic operations:
 
