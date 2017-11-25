@@ -4,3 +4,6 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+variables.yml
+vars.js

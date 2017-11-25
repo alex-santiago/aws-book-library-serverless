@@ -29,6 +29,10 @@ provider:
 # environment variables
   environment:
     BOOK_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    MY_PHONE: ${file(./variables.yml):var.MY_PHONE}
+    TWILLIO_PHONE: ${file(./variables.yml):var.TWILLIO_PHONE}
+    ACCOUNTSID: ${file(./variables.yml):var.ACCOUNTSID}
+    AUTHTOKEN: ${file(./variables.yml):var.AUTHTOKEN}
     # BOOK_EMAIL_TABLE: "book-email-${opt:stage, self:provider.stage}"
 
 #functions

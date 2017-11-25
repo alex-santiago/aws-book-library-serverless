@@ -5,6 +5,36 @@ const AWS = require('aws-sdk');
 
 AWS.config.setPromisesDependency(require('bluebird'));
 
+// twilio process #############
+// Twilio Credentials
+const accountSid = process.env.ACCOUNTSID; 
+const authToken = process.env.AUTHTOKEN; 
+
+// AWS.config.setPromisesDependency(require('twilio')(accountSid, authToken));
+
+// require the Twilio module and create a REST client
+const client = require('twilio')(accountSid, authToken);
+
+// send sms function
+const sendsms = (method, bookauthor) => {
+  const params = {
+      to: process.env.MY_PHONE, 
+      from: process.env.TWILLIO_PHONE, 
+      body: 'Method: ' + method + ' executed. Add book for author: ' + bookauthor,
+    };
+
+  client.messages
+  .create(params)
+  .then(result => console.log(result.sid))
+  .catch(error => {
+      console.error(error);
+      callback(new Error('Couldn\'t send message.'));
+      return;
+  });
+};
+
+// twilio process END #############
+
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 // submit books
@@ -39,6 +69,8 @@ module.exports.submit = (event, context, callback) => {
         })
       })
     });
+  console.log('Sending sms'); 
+  sendsms('Submit book', bookauthor);
 };
 
 

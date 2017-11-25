@@ -1,10 +1,10 @@
 # Library api deployed to AWS using serverless
 
-An AWS api that inserts books into a dynamoDb table. The api is deployed using the [serverless](https://serverless.com/) framework.
+An AWS api that inserts books into a dynamoDb table. The api is deployed using the [serverless](https://serverless.com/) framework. Also the api functions integrate with the twilio service to send sms messages when a new book is submited or deleted. 
 
 ## Basic operations:
 
-1. Submit book - receives a .json:
+1. Submit book - receives a .json to include a book and sends a sms. .json format:
 	
 	```json
 	{
@@ -18,7 +18,7 @@ An AWS api that inserts books into a dynamoDb table. The api is deployed using t
 
 3. List a book by id - receives the book id to list
 
-4. Delete a book by id - receives the book id to delete
+4. Delete a book by id - receives the book id to delete and sends sms
 
 ## File list:
 
