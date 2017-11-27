@@ -3,8 +3,8 @@ const AWS = require('aws-sdk');
 const vars = require('./vars');
 
 // Twilio Credentials
-const accountSid = vars.accountSid(); //'AC2d1f7df5b2bc7aee939c7ef7d18bb39f';
-const authToken = vars.authToken(); //'776572943bd915ed52be62f3514ab931';
+const accountSid = vars.accountSid();
+const authToken = vars.authToken(); 
 
 // require the Twilio module and create a REST client
 const client = require('twilio')(accountSid, authToken);
@@ -12,8 +12,8 @@ const client = require('twilio')(accountSid, authToken);
 // send sms function
 module.exports.sendsms = (method, bookid) => {
     const params = {
-        to: vars.to(), //'+12367778191',
-        from: vars.from(), //'+16043052913',
+        to: vars.to(),
+        from: vars.from(), 
         body: 'Method: ' + method + ' executed for bookid: ' + bookid,
       };
   
